@@ -1,0 +1,91 @@
+body{
+	width: 750px;	
+}
+
+.streams{
+	width: 770px;
+	padding-bottom: 150px;
+}
+
+.stream{
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 30px;
+}
+
+.choise{
+	display: none;
+}
+
+p{
+	font-size: 18px; 
+	text-align: center;
+	color: purple;
+}
+
+input{
+	height: 30px;
+	width: 380px;
+	font-size: 16px;
+	line-height: 30px;
+	background-color: #fff;
+	border: 3px solid purple;
+	color: purple;
+	box-sizing: border-box;
+	padding: 10px;
+	font-weight: bold;
+}
+
+button{
+	width: 240px;
+	height: 40px;
+	margin: 25px 20px;
+	background-color: purple;
+	border: none;
+	color: #fff;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.end,.add--more{
+	display: block;
+	clear: both;
+	width: 240px;
+	height: 40px;
+	margin: 25px auto;
+}
+
+.add--more{
+	margin-top: 100px;
+}
+
+a{
+	display: block;
+	font-size: 16px;
+	color: purple;
+	text-decoration: none;
+}
+
+.added{
+	font-size: 16px;
+	font-weight: bold;
+	color: purple;
+	width: 400px;
+}
+
+.added p{
+	text-align: left;
+}
+
+.added:hover span{
+	display: block;
+}
+
+span{
+	text-align: right;
+	font-weight: normal;
+	font-size: 14px;
+	float: right;
+	display: none;
+	cursor: pointer;
+}

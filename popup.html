@@ -1,0 +1,55 @@
+<!doctype html>
+<meta charset="UTF-8">
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Manual Twitch Streams Checker</title>
+    
+    </style>
+    <link rel="stylesheet" href="style.css">
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+     <script src="jquery.min.js"></script>
+     <script src="mustache.js"></script>
+     <script src="popup.js"></script>
+  </head>
+  <body>
+  <div class="choise">
+      <p>Which streams you want to check?</p>
+      <input type="text" placeholder="Just stream name, after .tv/">
+      <button class="add">Add this</button>
+      <p>This streams already in checklist</p>
+      <div class="list">
+        No streams was added
+        <script id="list" type="x-tmpl-mustache">
+        {{#streams}}
+          <div class="added"> 
+            {{stream}}<span class="{{id}}">Don't check anymore</span>
+          </div>
+        {{/streams}}
+        </script>  
+      </div>    
+      <button class="end">Go to streams page</button>
+    </div>
+  <div class="streams">    
+    <script id="players" type="x-tmpl-mustache">
+    {{#streams}}
+      <div class="stream">      
+      <iframe src="https://player.twitch.tv/?channel={{stream}}" frameborder="0" scrolling="no" height="207" width="368"></iframe><a target="blank" href="https://www.twitch.tv/{{stream}}">Open stream page on Twitch</a>
+      </div>
+    {{/streams}}
+    </script>
+  </div>
+    <button class="add--more">Add more streams</button>
+  </body>
+</html>
+
